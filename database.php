@@ -53,4 +53,12 @@ $queryVendedores = "
     );
 ";
 
+try {
+    // Ejecutar las consultas de creación de tablas
+    $pdo->exec($queryPedidos);
+    $pdo->exec($queryClientes);
+    $pdo->exec($queryVendedores);
+} catch (PDOException $e) {
+    die("Error al crear las tablas: " . $e->getMessage());
+}
 ?>
